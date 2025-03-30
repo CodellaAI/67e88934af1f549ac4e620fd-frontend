@@ -1,0 +1,70 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
+  --gold-primary: 243, 199, 40;
+  --gold-secondary: 230, 184, 11;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 31, 41, 55;
+  --background-end-rgb: 17, 24, 39;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.gold-gradient {
+  background: linear-gradient(90deg, #f3c728 0%, #e6b80b 100%);
+}
+
+.gold-text {
+  background: linear-gradient(90deg, #f3c728 0%, #e6b80b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gold-500 hover:bg-gold-600 text-primary-950 font-medium rounded-md transition-colors shadow-gold;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 border border-gold-500 text-gold-500 hover:bg-gold-50 dark:hover:bg-primary-800 font-medium rounded-md transition-colors;
+  }
+  
+  .input-primary {
+    @apply px-4 py-2 border border-primary-300 dark:border-primary-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500 dark:bg-primary-800 transition-all;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-primary-800 rounded-lg shadow-md p-6 transition-all;
+  }
+  
+  .card-gold {
+    @apply bg-white dark:bg-primary-800 rounded-lg border border-gold-200 dark:border-gold-800 shadow-gold-md p-6 transition-all;
+  }
+}
